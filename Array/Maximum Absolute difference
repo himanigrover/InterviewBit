@@ -24,12 +24,6 @@ int Solution::maxArr(vector<int> &A) {
         max2=max(max2,A[i]-i);
         min2=min(min2,A[i]-i);
     }
-    int ans=INT_MIN;
-    for(int i=0;i<A.size();i++){
-        ans=max(ans,abs(max1-(A[i]+i)));
-        ans=max(ans,abs(min1-(A[i]+i)));
-        ans=max(ans,abs(max2-(A[i]-i)));
-        ans=max(ans,abs(min2-(A[i]-i)));
-    }
-    return ans;
+  // instead of second for loop, try this
+return max(max1-min1,max2-min2);
 }
